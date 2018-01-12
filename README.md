@@ -32,20 +32,23 @@ We show here how to compile the framework from CLI (Command Line Interface).
 To compile the simulator and GUI system (package `ppplanning`) and place all `.class` files under `bin/`, run:
 
 ```
-javac -d bin/ -cp src/ src/au/rmit/ai/agtgrp/apparate/gui/simviewer/controller/Launcher.java
+javac -d bin/ -cp src/ \    
+    src/au/rmit/ai/agtgrp/apparate/gui/simviewer/controller/Launcher.java
 ```
 
 Then compile all agents available in package `agents`:
 
 ```
-javac -d bin/ -cp src/ src/au/rmit/ai/agtgrp/apparate/agents/*.java
+javac -d bin/ -cp src/  \
+    `find src/au/rmit/ai/agtgrp/apparate/agents/ -name *.java | xargs`
 ```
 
 
 To **run** the system from CLI:
 
 ```
-java -cp bin/: au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher <config-file>
+java -cp bin/: \
+    au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher <config-file>
 ```
 
 where:
