@@ -1,0 +1,9 @@
+Compilation instructions for libHRTimer
+export  JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
+export  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.
+gcc -I${JAVA_HOME}/include   -I${JAVA_HOME}/include/linux -shared libHRTimer.c -o libHRTimer.so -fPIC -lrt
+Note that -lrt needs to be at the end!
+Note also that libHRTimer.so needs to be in your LD_LIBRARY_PATH
+
+
+
