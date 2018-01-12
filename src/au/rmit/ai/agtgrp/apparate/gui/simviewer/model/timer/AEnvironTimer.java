@@ -173,7 +173,6 @@ public abstract class AEnvironTimer {
 
 	/**
 	 * perform one step only, doing while it is not already running
-	 * @throws InterruptedException 
 	 */
 	public void Step()  {
 		if (!running) {

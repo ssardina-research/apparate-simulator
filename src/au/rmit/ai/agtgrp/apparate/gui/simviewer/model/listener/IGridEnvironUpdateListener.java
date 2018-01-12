@@ -58,8 +58,8 @@ public interface IGridEnvironUpdateListener {
 	/**
 	 * fired when the spawner have been changed
 	 * @param environ
-	 * @param oldplanner
-	 * @param newplanner
+	 * @param oldspawner
+	 * @param newspawner
 	 */
 	public void spawnerChanged(GridEnviron environ, PlanningAgent oldspawner, PlanningAgent newspawner);
 	
