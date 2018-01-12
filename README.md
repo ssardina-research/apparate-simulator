@@ -19,6 +19,7 @@ It contains three packages:
 
 
 * Java Runtime Environment (JRE) and Java Compiler (javac) v1.6+ (Sun version recommended)
+* The [JPathPlan library](https://bitbucket.org/agtrmit/jpathplan) containing basic generic search infrastructure and path-planning algorithms.
 * `libHRTimer.so` to have access to C access to the clock.
 * A configuration file (see below)
 * [Moving-AI+](http://movingai.com/benchmarks/) compatible maps.
