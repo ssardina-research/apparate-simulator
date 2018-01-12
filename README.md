@@ -1,6 +1,6 @@
 #  APPARATE Path Planner Simulator and Visualization System
 
-This is a GUI simulator for running path-planning systems over [Moving-AI+](http://movingai.com/benchmarks/) maps. To connect pre-defined algorithms use [JPathPlan library](https://bitbucket.org/agtrmit/jpathplan) of path-planners; version 1.7 already included.
+This is a GUI simulator for running path-planning systems over [Moving-AI+](http://movingai.com/benchmarks/) maps. To connect pre-defined algorithms use [JPathPlan library](https://bitbucket.org/ssardina-research/apparate-jpathplan) of path-planners; version 1.7 already included.
 
 The system is basically composed of two parts (inside package `au.rmit.agtgrp.apparate`):
 
