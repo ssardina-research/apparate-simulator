@@ -1,11 +1,13 @@
 #  APPARATE Path Planner Simulator and Visualization System
 
-This is a GUI simulator for running path-planning systems over [Moving-AI+](http://movingai.com/benchmarks/) maps. To connect pre-defined algorithms use [JPathPlan library](https://bitbucket.org/agtrmit/jpathplan) of path-planners; version 1.7 already included.
+This is a GUI simulator for running path-planning systems over [Moving-AI+](http://movingai.com/benchmarks/) maps. 
 
-The system is basically composed of two parts (inside package `au.rmit.agtgrp.apparate`):
+It contains three packages:
 
-1. Package `gui` contains the actual simulator and GUI interface.
-2. Package `agents` contains one _dummy_ random agent. An agent returns the next action at every cycle. The idea is to build smarter new agent systems!
+1. **jpathplan**: set of generic classes to define path planners.
+2. **gui**: all the classes to implement the simulation and visualization.
+3. **agents**: agents that can do actions in the map, by outputing one action per simulation cycle. Agents can use path-planners.
+
 
 **Have fun with it!**
 
@@ -17,7 +19,6 @@ The system is basically composed of two parts (inside package `au.rmit.agtgrp.ap
 
 
 * Java Runtime Environment (JRE) and Java Compiler (javac) v1.6+ (Sun version recommended)
-* The [JPathPlan library](https://bitbucket.org/agtrmit/jpathplan) containing basic generic search infrastructure and path-planning algorithms.
 * `libHRTimer.so` to have access to C access to the clock.
 * A configuration file (see below)
 * [Moving-AI+](http://movingai.com/benchmarks/) compatible maps.
@@ -25,35 +26,30 @@ The system is basically composed of two parts (inside package `au.rmit.agtgrp.ap
 
 ## Compiling and Running APPARATE 
 
-We show here how to compile the framework from CLI (Command Line Interface). If using an IDE, like Eclipse or IntelliJ, you nede to setup the source and output directories and the _JPathPlan_ library and the IDEA will do the rest.
-
+We show here how to compile the framework from CLI (Command Line Interface). 
 
 To compile the simulator and GUI system (package `ppplanning`) and place all `.class` files under `bin/`, run:
 
 ```
-javac -d bin/ -cp src/:lib/apparate-jpathplan.jar \
-    src/au/rmit/agtgrp/apparate/gui/simviewer/controller/Launcher.java
+javac -d bin/ -cp src/ src/au/rmit/ai/agtgrp/apparate/gui/simviewer/controller/Launcher.java
 ```
 
 Then compile all agents available in package `agents`:
 
 ```
-javac -d bin/ -cp src/:lib/apparate-jpathplan.jar \
-    src/au/rmit/agtgrp/apparate/agents/*.java
+javac -d bin/ -cp src/ src/au/rmit/ai/agtgrp/apparate/agents/*.java
 ```
 
 
 To **run** the system from CLI:
 
 ```
-java -cp bin/:lib/apparate-jpathplan.jar \
-    au.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher <config-file>
+java -cp bin/: au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher <config-file>
 ```
 
 where:
 
-* `JPathPlan..jar` is the JAR file for the [JPathPlan library](https://bitbucket.org/agtrmit/jpathplan) (version 1.7 is provided under `lib/`)
-* `au.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher` is the main class that starts the application.
+* `au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher` is the main class that starts the application.
 * `<config-file>` contains all the options for the simulation (an example `config.properties` is included). See below for details.
 
 You can also use the script `./run.sh <conf-file>`
@@ -158,7 +154,7 @@ The format of those files can be found here:
 
 http://movingai.com/benchmarks/formats.html
 
-The standard maps do not include cost of cells and it relies on different type of navigations (by foot, sailing, flying, etc).  In contrast, **JPathPlan-GUI Apparate** is based soley on cost. So, to accommodate that, one can modify the first part of the map to include costs for each cell type.
+The standard maps do not include cost of cells and it relies on different type of navigations (by foot, sailing, flying, etc).  In contrast, **APPARATE** is based soley on cost. So, to accommodate that, one can modify the first part of the map to include costs for each cell type.
 
 The cost specification has to come before `map` keyword and respect the following order:
 
