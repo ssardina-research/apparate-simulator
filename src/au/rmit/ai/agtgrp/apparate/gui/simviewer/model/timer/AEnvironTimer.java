@@ -97,14 +97,15 @@ public abstract class AEnvironTimer {
 
 	/***
 	 * Set max time
-	 * @return
+	 *
+	 * @param maxtime the maximum time alloed
 	 */
 	public abstract void resetTimeMax(int maxtime);
 	
 	/**
 	 * Setting allow the timer to terminate the environment at any time
 	 * 
-	 * @param doabort
+	 * @param doabort	to abort or not if maxtime is reached
 	 */
 	public void setForceAbort(boolean doabort) {
 		this.allowforceabort = doabort;
@@ -113,7 +114,7 @@ public abstract class AEnvironTimer {
 	/**
 	 * Add a new timer event
 	 * 
-	 * @param event
+	 * @param event	event to be added
 	 */
 	public void AddTimerEvent(ITimerListener event) {
 		events.add(event);
@@ -122,7 +123,7 @@ public abstract class AEnvironTimer {
 	/**
 	 * Remove an existing event, nothing happens if event does not exist
 	 * 
-	 * @param event
+	 * @param event	event to be removed
 	 */
 	public void RemoveTimerEvent(ITimerListener event) {
 		events.remove(event);
@@ -131,7 +132,7 @@ public abstract class AEnvironTimer {
 	/**
 	 * Clear all events
 	 * 
-	 * @return
+	 * @return	the old list of events
 	 */
 	public List<ITimerListener> RemoveAllTimeEvents() {
 		List<ITimerListener> oldevents = events;
@@ -192,7 +193,8 @@ public abstract class AEnvironTimer {
 	}
 
 	/* *******************
-	 * Utility*******************
+	 * Utility
+	 * *******************
 	 */
 
 	protected void CallRunStart(AEnvironTimer timer) {
