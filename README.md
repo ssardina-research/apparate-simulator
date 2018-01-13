@@ -28,10 +28,10 @@ For bugs, issues, and extensions [please open an issue](https://bitbucket.org/ss
 
 
 * Java Runtime Environment (JRE) and Java Compiler (javac) v1.6+ (Sun version recommended)
-* The [JPathPlan library](https://bitbucket.org/agtrmit/jpathplan) containing basic generic search infrastructure and path-planning algorithms.
 * `libHRTimer.so` to have access to C access to the clock.
 * A configuration file (see below)
-* [Moving-AI+](http://movingai.com/benchmarks/) compatible maps.
+* Maps in the [Moving-AI+](http://movingai.com/benchmarks/) format + extension with cost (see below).
+* Dynamic map scripts (if needed).
 
 
 ## Compiling and Running APPARATE 
