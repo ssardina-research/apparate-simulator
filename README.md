@@ -14,9 +14,12 @@ Two related projects (and repos) are:
 2. [Extra Agents and Path Planners](https://bitbucket.org/ssardina-research/apparate-agents-extras): Additional, more complex, agents, many of them using powerful path-planners. 
 	* **NOTE:** This repo is private and requires premission.
 
+For bugs, issues, and extensions [please open an issue](https://bitbucket.org/ssardina-research/apparate-simulator/issues?status=new&status=open).
+
+
+**Have fun developing your agents!!!**
 ----------
 
-**Have fun with it!**
 
 
 [TOC]
