@@ -8,11 +8,10 @@ It contains three packages:
 2. **gui**: all the classes to implement the simulation and visualization.
 3. **agents**: agents that can do actions in the map, by outputing one action per simulation cycle. Agents can use path-planners.
 
-To related projects are:
+Two related projects (and repos) are:
 
 1. [Map Creator](https://bitbucket.org/ssardina-research/apparate-mapcreator): To be able to create text map files easier (e.g., from an image file done in GIMP).
-2. [EXtra Agents and Path Planners](https://bitbucket.org/ssardina-research/apparate-agents-extras): Additional, more complex, agents, many of them using powerful path-planners. This repo is private and requires premission.
-
+2. [Extra Agents and Path Planners](https://bitbucket.org/ssardina-research/apparate-agents-extras): Additional, more complex, agents, many of them using powerful path-planners. This repo is private and requires premission.
 
 ----------
 
