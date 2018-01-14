@@ -7,13 +7,7 @@ Also, it is able to change the path-planning algorithms on-the-fly and can handl
 
 The simulator uses [Moving-AI+](http://movingai.com/benchmarks/) maps.
 
-APPARATE can be used for teaching puroposes for students to code advanced algorithms and develop their own ones.
-
-It contains three packages:
-
-1. **jpathplan**: set of generic classes to define path planners.
-2. **gui**: all the classes to implement the simulation and visualization.
-3. **agents**: agents that can do actions in the map, by outputing one action per simulation cycle. Agents can use path-planners.
+APPARATE can be used for teaching purposes for students to code advanced search and execution algorithms and develop their own ones. See [AOPD-2012](https://sites.google.com/site/aopd12/assignments/assignment-3-contest) for an example.
 
 For further detailed information (how to run it, map information, etc), refer to the [Project Wiki]()
 
