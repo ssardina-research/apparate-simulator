@@ -1,9 +1,13 @@
 #  APPARATE Path Planner Simulator and Visualization System
 
-Apparate is an application package to code, simulate, and visualise various path planning algorithms, such as A*, Real-time A* or incremental path planners like D* or Moving Target. 
-To do so, the framework provides an interface to implement path finding algorithms and to run them, get statistics, and visualize them. The simulator uses [Moving-AI+](http://movingai.com/benchmarks/) maps
+APPARATE is an application package to code, simulate, and visualise various path planning algorithms, such as A*, Real-time A* or incremental path planners like D* or Moving Target. 
+To do so, the framework provides an interface to implement path finding algorithms and to run them, get statistics, and visualize them. 
+Importantly, APPARATE is a suitable tool for testing incremental algorithms; it allows dynamic changes to the environment (like adding water areas or moving the target location), via a script or the GUI interface.
+Also, it is able to change the path-planning algorithms on-the-fly and can handle large maps.
 
-Apparate can be used for teaching puroposes for students to code advanced algorithms and develop their own ones.
+The simulator uses [Moving-AI+](http://movingai.com/benchmarks/) maps.
+
+APPARATE can be used for teaching puroposes for students to code advanced algorithms and develop their own ones.
 
 It contains three packages:
 
