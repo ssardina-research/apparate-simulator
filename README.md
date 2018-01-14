@@ -1,6 +1,9 @@
 #  APPARATE Path Planner Simulator and Visualization System
 
-This is a GUI simulator for running path-planning systems over [Moving-AI+](http://movingai.com/benchmarks/) maps. 
+Apparate is an application package to code, simulate, and visualise various path planning algorithms, such as A*, Real-time A* or incremental path planners like D* or Moving Target. 
+To do so, the framework provides an interface to implement path finding algorithms and to run them, get statistics, and visualize them. The simulator uses [Moving-AI+](http://movingai.com/benchmarks/) maps
+
+Apparate can be used for teaching puroposes for students to code advanced algorithms and develop their own ones.
 
 It contains three packages:
 
@@ -277,9 +280,11 @@ Some examples:
 
 ## Contributors
 
-* Sebastian Sardina (contact - ssardina@gmail.com)
-* Andy Heng Xie
-* Nitin Yadav
+* Sebastian Sardina (project supervisor, developer, and contact - ssardina@gmail.com).
+* Abhijeet Anand (developed JPathPlan library as part of his 2011 Minor Thesis, which provides the generic framework to develop path planners).
+* Andy Heng Xie (developed first GUI version as part of a summer project).
+
+We thank [Prof. Jorge Baier](http://jabaier.sitios.ing.uc.cl/index.php?page=main) from Universidad Catolica of Chile for providing his original path-planning simulator in which we built on our system.
 
 
 ## License
