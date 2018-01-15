@@ -16,14 +16,14 @@ To compile the simulator and GUI system (package `ppplanning`) and place all `.c
 
 ```
 javac -d bin/ -cp src/ \    
-    src/au/rmit/ai/agtgrp/apparate/gui/simviewer/controller/Launcher.java
+    src/au/edu/rmit/agtgrp/apparate/gui/simviewer/controller/Launcher.java
 ```
 
 Then compile all agents available in package `agents`:
 
 ```
 javac -d bin/ -cp src/  \
-    `find src/au/rmit/ai/agtgrp/apparate/agents/ -name *.java | xargs`
+    `find src/au/edu/rmit/agtgrp/apparate/agents/ -name *.java | xargs`
 ```
 
 
@@ -31,7 +31,7 @@ To **run** the system from CLI:
 
 ```
 java -cp bin/: \
-    au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher <config-file>
+    au.edu.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher <config-file>
 ```
 
 where:
@@ -67,7 +67,7 @@ agentname=MyGoodAgent
 agentloc=./
 
 ### Which agents to make available?
-agentclass=au.rmit.agtgrp.apparate.agents.MyRandomAgent
+agentclass=au.edu.rmit.agtgrp.apparate.agents.MyRandomAgent
 
 ```
 		
