@@ -1,22 +1,37 @@
 #  APPARATE Path Planner Simulator and Visualization System
 
-APPARATE is an application package to code, simulate, and visualise various path planning algorithms, such as A*, Real-time A* or incremental path planners like D* or Moving Target. 
-To do so, the framework provides an interface to implement path finding algorithms and to run them, get statistics, and visualize them. 
-Importantly, APPARATE is a suitable tool for testing incremental algorithms; it allows dynamic changes to the environment (like adding water areas or moving the target location), via a script or the GUI interface.
-Also, it is able to change the path-planning algorithms on-the-fly and can handle large maps.
+## Overview 
 
-The simulator uses [Moving-AI+](http://movingai.com/benchmarks/) maps.
+APPARATE is an application package to code, simulate, and visualise various path planning algorithms, such as A*, Real-time A* or incremental path planners like D* or Moving Target. 
+To do so, the framework provides an interface to implement path finding algorithms and to run them, get statistics, and visualize them. The simulator uses [Moving-AI+](http://movingai.com/benchmarks/) maps.
+
+APPARATE is a suitable tool for testing incremental algorithms; it allows dynamic changes to the environment (like adding water areas or moving the target location), via a script or the GUI interface. Also, APPARATE is able to change the path-planning algorithms on-the-fly and can handle large maps.
 
 APPARATE can be used for teaching purposes for students to code advanced search and execution algorithms and develop their own ones. See [AOPD-2012](https://sites.google.com/site/aopd12/assignments/assignment-3-contest) for an example.
 
-For further detailed information (how to run it, map information, etc), refer to the [Project Wiki](https://bitbucket.org/ssardina-research/apparate-simulator/wiki), also available in text under docs/wiki.
+It contains three packages:
+
+1. **jpathplan**: set of generic classes to define path planners.
+2. **gui**: all the classes to implement the simulation and visualization.
+3. **agents**: agents that can do actions in the map, by outputing one action per simulation cycle. Agents can use path-planners.
+
+Two related projects (and repos) are:
+
+1. [Map Creator](https://bitbucket.org/ssardina-research/apparate-mapcreator): To be able to create text map files easier (e.g., from an image file done in GIMP).
+2. [Extra Agents and Path Planners](https://bitbucket.org/ssardina-research/apparate-agents-extras): Additional, more complex, agents, many of them using powerful path-planners. 
+	* **NOTE:** This repo is private and requires premission.
 
 For bugs, issues, and extensions [please open an issue](https://bitbucket.org/ssardina-research/apparate-simulator/issues?status=new&status=open).
 
 **Have fun developing your agents!!!**
 
----------------------------------------
+## Sections
 
+1. [Compiling and Running APPARATE](Compiling and Running APPARATE): for instructions how to build and run agents in the framework.
+2. [Information on Maps](Info on Maps): includes map extensions and dynamic scripts.
+3. [Some Search Algorithms](Some path-planning algorithms): for some pointers to interesting search and path planning algorithms and techniques.
+3. [Changelog](Changelog): on major releases.
+ 
 
 ## Contributors
 
