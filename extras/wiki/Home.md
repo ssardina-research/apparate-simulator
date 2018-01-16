@@ -30,7 +30,8 @@ For bugs, issues, and extensions [please open an issue](https://bitbucket.org/ss
 1. [Compiling and Running APPARATE](Compiling and Running APPARATE): for instructions how to build and run agents in the framework.
 2. [Information on Maps](Info on Maps): includes map extensions and dynamic scripts.
 3. [Some Search Algorithms](Some path-planning algorithms): for some pointers to interesting search and path planning algorithms and techniques.
-3. [Changelog](Changelog): on major releases.
+4. The [HRTimer class](HRTimer High Resolution Timer) for high resolution timing via native interface JNI. Useful for algorithms like Deadline Aware Search (DAS) that require timing. 
+5. [Changelog](Changelog): on major releases.
  
 
 ## Contributors
