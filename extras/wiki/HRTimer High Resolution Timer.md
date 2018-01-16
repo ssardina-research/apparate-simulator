@@ -28,24 +28,20 @@ Good instructions on Java Native Interface can be found at in this [Java Tutoria
 4. Compile C code into an `.so` library:
     * Note that `-lrt` needs to be at the end!
 
-        ```
-        export  JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
-        
-        # if you get: /usr/lib/jvm/java-8-oracle/include/jni.h:45:20: fatal error: jni_md.h: No such file or directory
-        export C_INCLUDE_PATH=/usr/lib/jvm/java-8-oracle/include/linux:$C_INCLUDE_PATH
-        
-        # now compile
-        gcc -I${JAVA_HOME}/include  -shared libHRTimer.c -o libHRTimer.so -fPIC -lrt
-        ```
+            export  JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:bin/javac::")
+            
+            # if you get: /usr/lib/jvm/java-8-oracle/include/jni.h:45:20: fatal error: jni_md.h: No such file or directory
+            export C_INCLUDE_PATH=/usr/lib/jvm/java-8-oracle/include/linux:$C_INCLUDE_PATH
+            
+            # now compile
+            gcc -I${JAVA_HOME}/include  -shared libHRTimer.c -o libHRTimer.so -fPIC -lrt
 
 5. Use native methods: 
     * In the Java code, import `X.HRTimer` and use `<method name>` in your Java files.
     * Make sure your `LD_LIBRARY_PATH` includes the path where `libHRTimer.so` is placed (e.g., `lib/`):
 
-        ```    
-        # make the library created available for dynamic use at runtime
-        export  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<dir where libHRTimer.so will be placed>
-        ```    
+            # make the library created available for dynamic use at runtime
+            export  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<dir where libHRTimer.so will be placed>
 
 
 
