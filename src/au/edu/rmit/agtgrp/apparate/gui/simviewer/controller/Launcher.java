@@ -74,9 +74,9 @@ public class Launcher extends JApplet {
 		try {
 			prop.load(new FileInputStream(arg[0]));
 		} catch (Exception e) {
-			exitWithError("Could not load file");
-		} 
-		
+			exitWithError("Could not load configuration file given.");
+		}
+
 		
 		
 		// Create thislaunch
