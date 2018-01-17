@@ -1,0 +1,14 @@
+au.edu.rmit.agtgrp.apparate.agents
+au.edu.rmit.agtgrp.apparate.gui.interfaces
+au.edu.rmit.agtgrp.apparate.gui.simviewer.controller
+au.edu.rmit.agtgrp.apparate.gui.simviewer.model
+au.edu.rmit.agtgrp.apparate.gui.simviewer.model.listener
+au.edu.rmit.agtgrp.apparate.gui.simviewer.model.script
+au.edu.rmit.agtgrp.apparate.gui.simviewer.model.timer
+au.edu.rmit.agtgrp.apparate.gui.simviewer.view
+au.edu.rmit.agtgrp.apparate.jpathplan.entites
+au.edu.rmit.agtgrp.apparate.jpathplan.heuristics
+au.edu.rmit.agtgrp.apparate.jpathplan.interfaces
+au.edu.rmit.agtgrp.apparate.jpathplan.pathplanners
+au.edu.rmit.agtgrp.apparate.jpathplan.util
+au.edu.rmit.agtgrp.apparate.utils
