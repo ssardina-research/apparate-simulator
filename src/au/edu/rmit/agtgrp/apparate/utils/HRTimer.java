@@ -18,6 +18,9 @@ public class HRTimer
 
 	/**
 	 * Interface to the C function
+	 *
+	 * @return current time in nanoseconds
+	 *
 	 */
 	public native long getCurrentNanotime();
 	final static ThreadMXBean threadMX = ManagementFactory.getThreadMXBean();
