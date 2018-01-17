@@ -13,13 +13,15 @@ public interface IActionEvent {
 
 	/**
 	 * Execute the event on the given environment
-	 * @param environ
+	 *
+	 * @param environ the environment where to run the action
 	 */
 	public void RunAction(GridEnviron environ);
 	
 	/**
-	 * the actiontype of this action
-	 * @return
+	 * The actiontype of this action
+	 *
+	 * @return the type of this action
 	 */
 	public ActionType getAction();
 }

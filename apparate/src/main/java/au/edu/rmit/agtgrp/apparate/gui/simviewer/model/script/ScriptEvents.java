@@ -125,8 +125,9 @@ public class ScriptEvents {
 	
 	/**
 	 * Loads the events from a file
-	 * @param file
-	 * @return
+	 *
+	 * @param stream  stream to load the script from
+	 * @return the object contating the script events
 	 */
 	public static ScriptEvents readExternalData(InputStream stream) {
 		String readline;
@@ -245,9 +246,10 @@ public class ScriptEvents {
 	 *********************/
 	
 	/**
-	 * Add an action with a step event
-	 * @param event
-	 * @param step
+	 * Add an action event with a step event
+     *
+	 * @param event action event to be added
+	 * @param step  step event to add to
 	 */
 	public void addEvent(IActionEvent event, IStepEvent step) {
 		if (event == null || step == null) return;
@@ -272,9 +274,10 @@ public class ScriptEvents {
 	}
 
 	/**
-	 * add an action with a trigger event
-	 * @param event
-	 * @param trigger
+	 * Add an action with a trigger event
+     *
+	 * @param event     the action event to be added
+	 * @param trigger   the trigger event to add to
 	 */
 	public void addEvent(IActionEvent event, ITriggerEvent trigger) {
 		if (event == null || trigger == null) return;
@@ -313,8 +316,9 @@ public class ScriptEvents {
 	}
 	
 	/**
-	 * remove an event and all its steps/triggers
-	 * @param event
+	 * Remove an event and all its steps/triggers
+
+     * @param event the action event to be be removed
 	 */
 	public void removeEvent(IActionEvent event) {
 		if (event == null) return;
@@ -331,8 +335,9 @@ public class ScriptEvents {
 	}
 	
 	/**
-	 * remove the action association with the trigger
-	 * @param step
+	 * Remove the action association with the trigger
+
+	 * @param step the step to removed from
 	 */
 	public void removeEvent(RangeStepEvent step) {
 		HashSet<IActionEvent> stepactionlist = stepaction.remove(step);
@@ -349,8 +354,9 @@ public class ScriptEvents {
 	}
 
 	/**
-	 * remove the action association with the trigger
-	 * @param trigger
+	 * Remove the action association with the trigger
+     *
+	 * @param trigger the trigger to remove
 	 */
 	public void removeEvent(TriggerEvent trigger) {
 		HashSet<IActionEvent> triggeractionlist = triggeraction.remove(trigger);
@@ -371,7 +377,8 @@ public class ScriptEvents {
 	/**
 	 * Run only event which validates with the status of the environment. 
 	 * Thus all step events and those with association with status type trigger events
-	 * @param environ
+     *
+	 * @param environ the running environment
 	 */
 	public void runStatusEvents(GridEnviron environ) {
 		HashSet<IActionEvent> validstepactions = new HashSet<IActionEvent>(actionnostep);
@@ -393,7 +400,8 @@ public class ScriptEvents {
 	/**
 	 * Run only events which monitor changes in the environment. 
 	 * Thus all change type trigger events
-	 * @param environ
+     *
+     * @param environ the running environment
 	 */
 	public void runChangeEvents(GridEnviron environ) {
 		HashSet<IActionEvent> validstepactions = new HashSet<IActionEvent>(actionnostep);
@@ -411,7 +419,8 @@ public class ScriptEvents {
 	
 	/**
 	 * Saves the script to a file
-	 * @param file
+
+	 * @param file the file to save data to
 	 */
 	public void saveData(File file) {
 		// TODO: saving

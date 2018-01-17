@@ -24,8 +24,9 @@ public class ScriptExecutor implements IGridEnvironUpdateListener {
 	 *********************/
 	
 	/**
-	 * 
-	 * @param events the collection of events to run
+	 * Regiter an environment to run executor
+	 *
+	 * @param environ the running environment
 	 */
 	public ScriptExecutor(RunEnviron environ) {
 		this.environ = environ;

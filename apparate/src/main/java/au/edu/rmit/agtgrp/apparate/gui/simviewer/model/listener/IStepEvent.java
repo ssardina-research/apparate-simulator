@@ -9,9 +9,10 @@ package au.edu.rmit.agtgrp.apparate.gui.simviewer.model.listener;
 public interface IStepEvent {
 	
 	/**
-	 * checks the given step matches this event
-	 * @param step
-	 * @return
+	 * Checks the given step matches this event
+	 *
+	 * @param step the step number
+	 * @return true if event is this step
 	 */
 	public boolean isStep(int step);
 }

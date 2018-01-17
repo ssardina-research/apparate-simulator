@@ -577,7 +577,7 @@ public class Launcher extends JApplet {
 	 * Load the run environment as in GUI
      *
 	 * @param environ initialize GUI with this environment
-     * @return the map instance   
+     * @return the map instance
 	 */
 	public static MapInstance initGUI(RunEnviron environ) {
 		MapInstance map = new MapInstance(environ.getGridEnviron().getWidth(), environ.getGridEnviron().getHeight(), 2);
