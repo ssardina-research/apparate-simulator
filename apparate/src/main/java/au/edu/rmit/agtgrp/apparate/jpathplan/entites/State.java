@@ -1,10 +1,7 @@
 /**
- * RACT-PAL (RACT Path-Planning Algorithms Library) - A Library of Path Planning
- * Algorithms
- * 
- * Copyright (C) 2010 Abhijeet Anand, RACT - RMIT Agent Contest Team, School of
- * Computer Science and Information Technology,
- * RMIT University, Melbourne VIC 3000.
+ * A Library of Path Planning Algorithms
+ *
+ * Copyright (C) 2010 Abhijeet Anand and Sebastian Sardina, School of CS and IT, RMIT University, Melbourne VIC 3000.
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -80,17 +77,18 @@ public abstract class State {
     public abstract State parent();
     
     /**
-     * Compares two node.
+     * Checks if node are the same.
      * 
-     * @param o
-     * @return true if this node equals the provided node.
+     * @param o the node to check for equality
+     * @return true if this node equals the node o.
      */
     @Override
     public  abstract boolean equals(Object o);
     
     /**
      * Returns a hashcode for this object such that it can be used in a hash table.
-     * 
+     *
+     * @return hascode for this object
      * @see java.lang.Object#hashCode()
      */
     @Override

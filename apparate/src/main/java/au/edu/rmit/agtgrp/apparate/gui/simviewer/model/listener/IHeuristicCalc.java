@@ -12,11 +12,12 @@ import au.edu.rmit.agtgrp.apparate.gui.simviewer.model.GridDomain;
 public interface IHeuristicCalc {
 
 	/**
-	 * get the heuristic cost between two point
-	 * @param sNode
-	 * @param tNode
-	 * @param nodemap
-	 * @return return positive infinity if invalid nodes given
+	 * Get the heuristic cost between two point
+	 *
+	 * @param sNode		the source node
+	 * @param tNode		the destination node
+	 * @param nodemap	the map to use
+	 * @return 			heuristic value between sNode and tNode in nodemap. Positive infinity if invalid nodes given
 	 */
 	public float getHCost(GridCell sNode, GridCell tNode, GridDomain nodemap);
 }

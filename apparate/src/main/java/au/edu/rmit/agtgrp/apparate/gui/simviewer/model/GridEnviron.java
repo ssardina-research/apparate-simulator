@@ -1,3 +1,21 @@
+/**
+ * A Library of Path Planning Algorithms
+ *
+ * Copyright (C) 2010 Abhijeet Anand and Sebastian Sardina, School of CS and IT, RMIT University, Melbourne VIC 3000.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 package au.edu.rmit.agtgrp.apparate.gui.simviewer.model;
 
 import java.util.ArrayList;
@@ -97,66 +115,74 @@ public class GridEnviron {
 	 *********************/
 	
 	/**
-	 * get how the grid is perceived
-	 * @return
+	 * Get how the grid is perceived
+	 *
+	 * @return the current grid view
 	 */
 	public GridView getGridView() {
 		return this.gridview;
 	}
 	
 	/**
-	 * gets a list of coordinate that the agent has traversed
-	 * @return
+	 * Get a list of coordinate that the agent has traversed
+     *
+	 * @return list of traversed coordinates
 	 */
 	public List<GridCoord> getStartPath() {
 		return Collections.unmodifiableList(starttravelledpath);
 	}
 	
 	/**
-	 * gets a list of coordinate that the goal has traversed
-	 * @return
+	 * Get a list of coordinate that the goal has traversed
+     *
+	 * @return list of goal traversed coordinates
 	 */
 	public List<GridCoord> getGoalPath() {
 		return Collections.unmodifiableList(goaltravelledpath);
 	}
 
 	/**
-	 * returns the grid cell at the given location
-	 * @param x
-	 * @param y
-	 * @return null if position given is out of bound
+	 * Returns the grid cell at the given location
+     *
+	 * @param x the x value of the cell
+	 * @param y the y value of the cell
+	 * @return  the cell at (x,y); null if position given is out of bound
 	 */
 	public GridCell getCellAt(int x, int y) {
 		return grid.getCell(x, y);
 	}
 	
 	/**
-	 * get the current agent running
-	 * @return
+	 * Get the current agent running
+     *
+	 * @return the current planning agent that is running
 	 */
 	public PlanningAgent getPlannerSpawner() {
 		return plannerspawner;
 	}
 	
 	/**
-	 * gets the start position
-	 * @return
+	 * Get the start position
+     *
+	 * @return start coordinate
 	 */
 	public GridCoord getStartPosition() {
 		return startpos;
 	}
 	
 	/**
-	 * gets the goal's positiong
-	 * @return
+	 * Get the goal's positiong
+     *
+	 * @return goal coordinate
 	 */
 	public GridCoord getGoalPosition() {
 		return goalpos;
 	}
 
 	/**
-	 * gets a random position that is not blocked
-	 * @return
+	 * Get a random position that is not blocked
+     *
+	 * @return some coordinate that is NOT blocked
 	 */
 	public GridCoord getRandomNonBlockedPosition() {
 		int x,y;
@@ -171,26 +197,29 @@ public class GridEnviron {
 	
 	
 	/**
-	 * get the position of the start position in the previous step
+	 * Get the position of the start position in the previous step
 	 * return null if no step has been run yet
-	 * @return
+     *
+	 * @return the coordinate of the last start location
 	 */
 	public GridCoord getLastStartPosition() {
 		return laststartpos;
 	}
 	
 	/**
-	 * get the position of the goal position in the previous step
+	 * Get the position of the goal position in the previous step
 	 * return null if no step has been run yet
-	 * @return
+     *
+	 * @return the coordinate of the last goal location
 	 */
 	public GridCoord getLastGoalPosition() {
 		return lastgoalpos;
 	}
 	
 	/**
-	 * get the planned path of last run
-	 * @return null if no run has be given
+	 * Get the planned path of last run
+     *
+	 * @return the planned path; null if no run has be given
 	 */
 	public Plan getPath() {
 		//return this.lastpath;
@@ -202,8 +231,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * gets a list of nodes expended/open after the last run
-	 * @return 
+	 * Get list of nodes expended/open after the last run
+     *
+	 * @return list of cells that are open
 	 */
 	public ArrayList<GridCell> getOpenedNodes() {
 		if (this.plannerspawner == null) return null;
@@ -211,8 +241,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * gets a list of all nodes closed/unexpended in the last run
-	 * @return
+	 * Get list of all nodes closed/unexpended in the last run
+     *
+	 * @return list of cells that are closed
 	 */
 	public ArrayList<GridCell> getClosedNodes() {
 		if (this.plannerspawner == null) return null;
@@ -220,95 +251,109 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * get width of the map
-	 * @return
+	 * Get width of the map
+     *
+	 * @return the width of the grid
 	 */
 	public int getWidth() {
 		return grid.getWidth();
 	}
 	
 	/**
-	 * get height of the map
-	 * @return
+	 * Get height of the map
+     *
+	 * @return the height of the grid
 	 */
 	public int getHeight() {
 		return grid.getHeight();
 	}
 	
 	/**
-	 * gets number of runs this environment has performed
-	 * @return
+	 * Get number of runs this environment has performed
+     *
+	 * @return number of steps already performed
 	 */
 	public int getStep() {
 		return stepsPerformed;
 	}
 	
 	/**
-	 * returns the run time of the previous step in nano seconds
-	 * @return
+	 * Get the run time of the previous step in nano seconds
+     *
+	 * @return time consumed in last step
 	 */
 	public long getStepTime() {
 		return runtime.get(stepsPerformed);
 	}
 
 	/**
-	 * returns the time used so far
-	 * @return
+	 * Get the time used so far
+     *
+	 * @return time consumed so far
 	 */
 	public long getTimeSoFar() {
 		return runtimeSoFar;
 	}
 	
 	/**
-	 * returns the time used so far
-	 * @return
+	 * Get the cost so far
+     *
+	 * @return cost consumed so far
 	 */
 	public double getCostSoFar() {
 		return runcostSoFar;
 	}
 	
 	/**
-	 * returns the run time of the step in nano seconds
-	 * @return
+	 * Get the run time of a step in nano seconds
+     *
+     * @param step a step index
+	 * @return tiem consumed by the step
 	 */
 	public long getStepTime(int step) {
 		return runtime.get(step);
 	}
 	
 	/**
-	 * returns a list of the run time of each step
-	 * @return
+	 * Get run time of each step taken
+     *
+	 * @return time taken for each step so far
 	 */
 	public Map<Integer, Long> getRunTime() {
 		return new HashMap<Integer, Long>(runtime);
 	}
 	
 	/**
-	 * returns a list of all step's movement cost
-	 * @return
+	 * Get cost of each step taken
+     *
+	 * @return cost taken for each step so far
 	 */
 	public Map<Integer, Double> getRunCost() {
 		return new HashMap<Integer, Double>(runcost);
 	}
 	
 	/**
-	 * returns a list of all coordinate which itself moved to
+	 * Get coordinate  destination of each step taken
+     *
+     * @return coordinates moved to in each step so far
 	 */
 	public Map<Integer, GridCoord> getRunMove() {
 		return new HashMap<Integer, GridCoord>(runlocation);
 	}
 	
 	/**
-	 * returns a list of all movement of the start point
-	 * @return
+	 * Get list of all movement of the start point
+     *
+	 * @return list of coordinates
 	 */
 	public List<GridCoord> getAllStartMove() {
 		return new ArrayList<GridCoord>(starttravelledpath);
 	}
 
 	/**
-	 * returns a list of all movemment of the goal point
-	 * @return
+	 * Get a list of all movemment of the goal point
+     *
+	 * @return list of coordinates
 	 */
 	public List<GridCoord> getAllGoalMove() {
 		return new ArrayList<GridCoord>(goaltravelledpath);
@@ -316,7 +361,8 @@ public class GridEnviron {
 	
 	/**
 	 * Check if it would garbage collect before each run
-	 * @return
+     *
+	 * @return true if we will do GC before each run
 	 */
 	public boolean doGarbageCollection() {
 		return this.dogarbagecollection;
@@ -331,9 +377,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * set the new spawner, clears the old planner and replace it with the new planner
+	 * Set the new spawner, clears the old planner and replace it with the new planner
 	 * 
-	 * @param spawner
+	 * @param spawner new spawner planning agent to set
 	 */
 	public void setPlannerSpawner(PlanningAgent spawner) {
 		if (spawner == null) return;
@@ -348,9 +394,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * Set which grid type to be
-	 * Will reset the planner
-	 * @param newview
+	 * Set which grid type to be; Will reset the planner
+     *
+	 * @param newview new gridview to set
 	 */
 	public void setGridView(GridView newview) {
 		if (newview == null) return;
@@ -368,9 +414,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * adds a grid environment listener to this environment
+	 * Add a grid environment listener to this environment
 	 * 
-	 * @param listener
+	 * @param listener listener to register
 	 */
 	public void addGridEnvironUpdateListener(IGridEnvironUpdateListener listener) {
 		synchronized (writelock) {
@@ -379,9 +425,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * removes an existing listener
+	 * Removes an existing listener
 	 * 
-	 * @param listener
+	 * @param listener  listener to remove
 	 */
 	public void removeGridEnvironUpdateListener(IGridEnvironUpdateListener listener) {
 		synchronized (writelock) {
@@ -390,10 +436,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * Alters the start position
-	 * Does not change if placement is out of bound
+	 * Alters the start position. Does not change if placement is out of bound
 	 * 
-	 * @param newstartpos
+	 * @param newstartpos the new start coordinate to set
 	 */
 	public void setStartPosition(GridCoord newstartpos) {
 		GridCoord oldstartpos = null;
@@ -407,10 +452,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * Alters the goal position
-	 * Does not change if placement is out of bound
+	 * Alters the goal position. Does not change if placement is out of bound
 	 * 
-	 * @param newgoalpos
+	 * @param newgoalpos the new goal coordinate to set
 	 */
 	public void setGoalPosition(GridCoord newgoalpos) {
 		GridCoord oldgoalpos = null;
@@ -436,8 +480,9 @@ public class GridEnviron {
 	}
 	
 	/**
-	 * run the path finding
-	 * @param applymove set true to move the agent one step towards the goal after the execution
+	 * Run the path finding
+     *
+	 * @param applymove true to move the agent one step towards the goal after the execution
 	 */
 	public void applyStep(boolean applymove) {
 		RuntimeException hadexcepted = null;
@@ -536,8 +581,9 @@ public class GridEnviron {
 	}
 
 	/**
-	 * singal from the grid domain to indicate that one of its cell has changed
-	 * @param cell
+	 * Signal from the grid domain to indicate that one of its cell has changed
+     *
+	 * @param cell cell tha thas changed
 	 */
 	protected void cellAfterUpdate(GridCell cell) {
 		this.CallcellUpdated(this, cell);

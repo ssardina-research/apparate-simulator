@@ -12,16 +12,17 @@ import au.edu.rmit.agtgrp.apparate.gui.simviewer.model.script.TriggerType;
 public interface ITriggerEvent {
 	
 	/**
-	 * gets the trigger type
-	 * @return
+	 * Gets the trigger type
+	 *
+	 * @return the type of trigger of this event
 	 */
 	public TriggerType getTriggerType();
 	
 	/**
 	 * check if the environment status matches the trigger defined
 	 * 
-	 * @param environ
-	 * @return
+	 * @param environ the running environment
+	 * @return true if environment matches this trigger
 	 */
 	public boolean isTriggered(GridEnviron environ);
 }

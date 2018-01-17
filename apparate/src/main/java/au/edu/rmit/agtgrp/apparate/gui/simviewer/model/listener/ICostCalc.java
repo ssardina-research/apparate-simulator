@@ -12,11 +12,12 @@ import au.edu.rmit.agtgrp.apparate.gui.simviewer.model.GridDomain;
 public interface ICostCalc {
 	
 	/**
-	 * get the cost on a valid edge
-	 * @param sNode
-	 * @param tNode
-	 * @param nodemap
-	 * @return
+	 * Get the cost on a valid edge
+	 *
+	 * @param sNode		the source node
+	 * @param tNode		the destination node
+	 * @param nodemap	the map to use
+	 * @return			cost of edge between sNode and tNode in nodemap map
 	 */
 	public float getCost(GridCell sNode, GridCell tNode, GridDomain nodemap);
 

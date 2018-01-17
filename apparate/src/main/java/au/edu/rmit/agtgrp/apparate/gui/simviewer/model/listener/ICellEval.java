@@ -14,48 +14,52 @@ import au.edu.rmit.agtgrp.apparate.gui.simviewer.model.GridDomain;
 public interface ICellEval {
 
 	/**
-	 * evaluate if the cell is blocked
-	 * @param cell
-	 * @return
+	 * Check if a cell is blocked
+	 *
+	 * @param cell cell to check
+	 * @return true if cell is a block one
 	 */
 	public boolean isBlocked(GridCell cell);
 	
 	/**
-	 * returns a list of all possible edge pointing from this cell
-	 * @param sNode
-	 * @param nodemap
-	 * @return
+	 * Returns a list of all possible edge pointing from this cell
+     *
+	 * @param sNode     the cell to check
+	 * @param nodemap   the map to use
+	 * @return          list of successor cells fron sNode in nodemap
 	 */
 	public ArrayList<GridCell> getViableSuccessors(GridCell sNode, GridDomain nodemap);
 	
 	/**
 	 * returns a list of all possible edge point to this cell
-	 * @param tNode
-	 * @param nodemap
-	 * @return
+	 * @param tNode     the cell to check
+	 * @param nodemap   the map to use
+	 * @return          list of predecessors cells fronm tNode in nodemap
 	 */
 	public ArrayList<GridCell> getViablePredecessors(GridCell tNode, GridDomain nodemap);
 	
 	/**
-	 * checks if the two cell given are a valid edge
-	 * @param sNode
-	 * @param tNode
-	 * @param nodemap
-	 * @return
+	 * Checks if the two cell given are a valid edge
+     *
+	 * @param sNode     one cell
+	 * @param tNode     another cell
+	 * @param nodemap   the map to use
+	 * @return          true if ther is a link in nodemap between sNode and tNode
 	 */
 	public boolean isValidEdge(GridCell sNode, GridCell tNode, GridDomain nodemap);
 
 	/**
-	 * get the next successor after a current index in a given problem
-	 * @param _currentIndex
-	 * @param _parent
-	 * @param _problem
-	 * @return
+	 * Get the next successor after a current index in a given problem
+     *
+	 * @param _currentIndex the current index
+	 * @param _parent       the parent cell
+	 * @param _problem      the problem domain
+	 * @return              the next successor
 	 */
 	public GridCell getNextSuccessor(int _currentIndex, GridCell _parent, GridDomain _problem);
 
 	/**
-	 * @return
+	 * @return the maximum number of successors
 	 */
 	public int getMaxSuccessors();	
 	

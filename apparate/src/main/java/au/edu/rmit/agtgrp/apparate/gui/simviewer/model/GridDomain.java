@@ -1,17 +1,18 @@
 /**
- * RACT-PAL (RACT Path-Planning Algorithms Library) - A Library of Path Planning
- * Algorithms
- * Copyright (C) 2010 Abhijeet Anand, RACT - RMIT Agent Contest Team, School of
- * Computer Science and Information Technology,
- * RMIT University, Melbourne VIC 3000.
+ * A Library of Path Planning Algorithms
+ *
+ * Copyright (C) 2010 Abhijeet Anand and Sebastian Sardina, School of CS and IT, RMIT University, Melbourne VIC 3000.
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -144,9 +145,10 @@ public class GridDomain extends SearchDomain {
     
     /**
      * Initiate the grid with the given width and height and also set the cells to the given type
-     * @param width
-     * @param height
-     * @param basetype the cell's default type on construction
+     *
+     * @param width     width of the grid to create
+     * @param height    height of the grid to create
+     * @param basetype  the cell's default type on construction
      */
     protected GridDomain(int width, int height, GridCellType basetype) {
     	changes = new HashSet<GridCoord>();
@@ -172,6 +174,7 @@ public class GridDomain extends SearchDomain {
     
     /**
      * Initiate the grid with the map data provided
+     *
      * @param map the map data
      */
     protected GridDomain(MapData map) {
@@ -217,8 +220,8 @@ public class GridDomain extends SearchDomain {
     
     /**
      * 
-     * @param x
-     * @param y
+     * @param x the x value of coordinate
+     * @param y the y value of coordinate
      * @return cell at that coordinate, else null if outside of the range
      */
     public GridCell getCell(int x, int y) {
@@ -229,8 +232,9 @@ public class GridDomain extends SearchDomain {
     }
     
     /**
-     * 
-     * @param newcoord
+     * Get cell from coordinate
+     *
+     * @param newcoord  coordinate of celll to get
      * @return cell at that coordinate or null if outside of the domain's range
      */
     public GridCell getCell(GridCoord newcoord) {
@@ -267,7 +271,7 @@ public class GridDomain extends SearchDomain {
     }
     
     /**
-     * collapse all the changes to the map to the current map
+     * Collapse all the changes to the map to the current map
      * This also removed all the changes
      */
     public void applyChanges() {
@@ -282,9 +286,10 @@ public class GridDomain extends SearchDomain {
     }
     
     /**
-     * called by the child cell before they get altered
+     * Called by the child cell before they get altered
      * this keeps a record of the original copy of the cell
-     * @param updatedcell
+     *
+     * @param updatedcell   cell to be updated
      */
     protected void cellToUpdate(GridCell updatedcell) {
     	synchronized (changes) {
@@ -297,8 +302,9 @@ public class GridDomain extends SearchDomain {
     }
     
     /**
-     * called by the child cell after they get altered
-     * @param updatedcell
+     * Called by the child cell after they get altered
+     *
+     * @param updatedcell cell to be updated
      */
     protected void cellUpdated(GridCell updatedcell) {
     	if (parent != null) parent.cellAfterUpdate(updatedcell);
@@ -308,6 +314,7 @@ public class GridDomain extends SearchDomain {
      * --------------------- OVERRIDDEN INTERFACE METHODS --------------------*
      * =======================================================================*
      */
+
     /*
      * (non-Javadoc)
      * 
@@ -357,10 +364,10 @@ public class GridDomain extends SearchDomain {
     
     
     /**
-     * returns iterator for the successors of a given node
+     * Returns iterator for the successors of a given node
      * 
-     * @param cNode
-     * @return
+     * @param cNode node to get iterator from
+     * @return  successor iterators for cNode sate
      */
     public SuccessorIterator getNextSuccessor(State cNode) {
     	return new SuccessorIterator(celleval, (GridCell) cNode, this);
@@ -436,20 +443,22 @@ public class GridDomain extends SearchDomain {
      */
     
     /**
-     * checks if the coordinate given is a valid coordinate within this grid
-     * @param x
-     * @param y
-     * @return
+     * Check if the coordinate given is a valid coordinate within this grid
+     *
+     * @param x the x value of coordinate
+     * @param y the y value of coordinate
+     * @return  true if valid location in this grid
      */
     protected boolean isValidLocation(int x, int y) {
     	return !(this.width <= x || this.height <= y || x < 0 || y < 0);
     }
     
     /**
-     * checks if the coordinate has been changes since the last collapse change
-     * @param x
-     * @param y
-     * @return
+     * Check  if the coordinate has been changes since the last collapse change
+     *
+     * @param x the x value of coordinate
+     * @param y the y value of coordinate
+     * @return  true if coordinate has changed
      */
     protected boolean hasChanged(int x, int y) {
     	if (oldmap[x][y] == null || basemap[x][y] == null) return false;
