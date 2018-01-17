@@ -26,6 +26,8 @@ javac -d bin/ -cp src/  \
     `find src/au/edu/rmit/agtgrp/apparate/agents/ -name *.java | xargs`
 ```
 
+You can also use the script `./compile.sh` to compile into directory `bin/`.
+
 
 To **run** the system from CLI:
 
@@ -37,39 +39,10 @@ java -cp bin/: \
 where:
 
 * `au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher` is the main class that starts the application.
-* `<config-file>` contains all the options for the simulation (an example `config.properties` is included). See below for details.
+* `<config-file>` contains all the options for the simulation. See [Configuration File](Configuration File) section for details on such file and an example.
 
 You can also use the script `./run.sh <conf-file>`
 
-	
-## Configuration File
-
-This is the file configuring how the application should run. It is mostly self-explanatory:
-
-
-```
-map=maps/blastedlands.map           % the map file, else it would use a blank map
-grid=euclidean                      % either manhatten or euclidean
-totaltime=10000                     % total time allowed in milliseconds (0 =  no limit)
-pulsertime=200                      % pause time between pulses (only if not quiet)
-mintimestep=1                       % step of less than 1ms are not counted towards time
-steps=200                           % how many total steps allowed (0 = no limit)
-steptime=400                        % time allowed in each step (default: no limit)
-startpos=200,110                    % start position (missing or =random --> random pick)
-destpos=300,270                     % goal position (missing or =random --> random pick)
-quiet=false                         % no GUI, print out stats (arrived?, #steps, #distance, #time)
-killonlimit=true                    % kill the agent if limit time exceeded?
-managegc=falsE                      % Performs garbage collection before each step
-#script=maps/testscript.mapscript   % the file with the scripted events
-
-# Location of the agent JAR or binary
-agentname=MyGoodAgent
-agentloc=./
-
-### Which agents to make available?
-agentclass=au.edu.rmit.agtgrp.apparate.agents.MyRandomAgent
-
-```
 		
 ## GUI Interface Quick Start
 
