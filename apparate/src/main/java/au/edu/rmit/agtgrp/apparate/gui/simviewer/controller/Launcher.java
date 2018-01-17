@@ -57,8 +57,9 @@ public class Launcher extends JApplet {
 	
 	/**
 	 * Main entry point, in charge of loading both the gui and the cli version
-	 * @param arg
-	 * @throws InterruptedException
+	 *
+	 * @param arg the command line arguments
+	 * @throws InterruptedException the expection that can be thrown
 	 */
 	public static void main(String[] arg) throws InterruptedException {
 		isapplet = false;
@@ -355,7 +356,8 @@ public class Launcher extends JApplet {
 	/**
 	 * Set the current running environment
 	 * This is a central point for all controllers to access
-	 * @param environ
+     *
+	 * @param environ the environment to register (for controllers to access)
 	 */
 	public static void setRunEnviron(RunEnviron environ) {
 		synchronized (launcherlock) {
@@ -367,9 +369,10 @@ public class Launcher extends JApplet {
 	}
 	
 	/**
-	 * Set the current running gui
+	 * Set the current running GUI
 	 * This is a central point for all controllers to access
-	 * @param apppane
+     *
+	 * @param apppane the running GUI to register
 	 */
 	public static void setAppPane(AppContentPane apppane) {
 		synchronized (launcherlock) {
@@ -400,8 +403,9 @@ public class Launcher extends JApplet {
 	
 	/**
 	 * Synchronise the state between the running environment and the graphical interface
-	 * @param thispane
-	 * @param thisenviron
+     *
+	 * @param thispane      the graphical pannel
+	 * @param thisenviron   the running environment
 	 */
 	private static void linkPaneAndEnviron(AppContentPane thispane, RunEnviron thisenviron) {
 		// check the correct planner has been selected
@@ -427,8 +431,9 @@ public class Launcher extends JApplet {
 	
 	/**
 	 * Synchronise the state between the graphical interface and the external planner spawner
-	 * @param thispane
-	 * @param thisspawner
+     *
+     * @param thispane      the graphical pannel
+	 * @param thisspawner   the external planner spawner
 	 */
 	private static void linkPaneAndExternalSpawner(AppContentPane thispane, PlanningAgent thisspawner) {
 		if (thispane != null) {
@@ -440,7 +445,7 @@ public class Launcher extends JApplet {
 	
 	/**
 	 * load the running environment from the setting given
-	 * @param initsetting
+	 * @param initsetting   the init settings given
 	 * @return null if setting is invalid
 	 */
 	public static RunEnviron initRunEnviron(LaunchOptions initsetting) {
@@ -546,7 +551,9 @@ public class Launcher extends JApplet {
 
 	/**
 	 * Run the system
-	 * @param environ
+     *
+	 * @param environ the environment to run
+     * @return the map instance to start with
 	 */
 	public static MapInstance init(RunEnviron environ) {
 		MapInstance map = new MapInstance(environ.getGridEnviron().getWidth(), environ.getGridEnviron().getHeight(), 2);
@@ -568,7 +575,9 @@ public class Launcher extends JApplet {
 	
 	/**
 	 * Load the run environment as in GUI
-	 * @param environ
+     *
+	 * @param environ initialize GUI with this environment
+     * @return the map instance   
 	 */
 	public static MapInstance initGUI(RunEnviron environ) {
 		MapInstance map = new MapInstance(environ.getGridEnviron().getWidth(), environ.getGridEnviron().getHeight(), 2);
