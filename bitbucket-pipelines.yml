@@ -13,4 +13,5 @@ pipelines:
         script: # Modify the commands below to build your repository.
           # -B batch mode makes Maven less verbose
           - mvn -B verify
-          - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"target/apparate-?.?.?.jar"
+          # I don't know how to replace target/output.jar part to be generic for the version
+          # - curl -X POST --user "${BB_AUTH_STRING}" "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO_OWNER}/${BITBUCKET_REPO_SLUG}/downloads" --form files=@"target/apparate-4.5.0.jar"
