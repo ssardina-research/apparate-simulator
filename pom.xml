@@ -19,8 +19,8 @@
 	</dependencies>
 
 
-  <build>
-	  <resources>
+	<build>
+		<resources>
 		  <resource>
 			  <directory>src/main/java</directory>
 			  <includes>
@@ -34,45 +34,44 @@
 				  <include>**/*.*properties</include>
 			  </includes>
 		  </resource>
-	  </resources>
+		</resources>
 
-  	<plugins>
-  	   <plugin>
-  	     <groupId>org.apache.maven.plugins</groupId>
-  	     <artifactId>maven-javadoc-plugin</artifactId>
-  	     <executions>
-  	       <execution>
-  	         <id>attach-javadocs</id>
-  	         <goals>
-  	           <goal>jar</goal>
-  	         </goals>
-  	       </execution>
-  	     </executions>
-  	   </plugin>
-  	   <plugin>
-  	     <groupId>org.apache.maven.plugins</groupId>
-  	     <artifactId>maven-source-plugin</artifactId>
-  	     <executions>
-  	       <execution>
-  	         <id>attach-sources</id>
-  	         <goals>
-  	           <goal>jar</goal>
-  	         </goals>
-  	       </execution>
-  	     </executions>
-  	   </plugin>
+		<plugins>
+			<plugin>
+			 <groupId>org.apache.maven.plugins</groupId>
+			 <artifactId>maven-javadoc-plugin</artifactId>
+			 <executions>
+			   <execution>
+				 <id>attach-javadocs</id>
+				 <goals>
+				   <goal>jar</goal>
+				 </goals>
+			   </execution>
+			 </executions>
+			</plugin>
 
-		<plugin>
-			<groupId>org.codehaus.mojo</groupId>
-			<artifactId>exec-maven-plugin</artifactId>
-			<configuration>
-				<mainClass>au.edu.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher</mainClass>
-			</configuration>
-		</plugin>
-  	   
-  	</plugins>
-  </build>
-  
+			<plugin>
+			 <groupId>org.apache.maven.plugins</groupId>
+			 <artifactId>maven-source-plugin</artifactId>
+			 <executions>
+			   <execution>
+				 <id>attach-sources</id>
+				 <goals>
+				   <goal>jar</goal>
+				 </goals>
+			   </execution>
+			 </executions>
+			</plugin>
 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>au.edu.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher</mainClass>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	  </build>
 
 </project>
