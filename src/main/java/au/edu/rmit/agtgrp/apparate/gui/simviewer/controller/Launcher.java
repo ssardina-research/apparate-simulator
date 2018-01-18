@@ -220,27 +220,37 @@ public class Launcher extends JApplet {
 			thislaunch.haskillonlimit = flag;
 			thislaunch.killonlimit = flag;
 		}
-		
-		// set agents
+
+
+        // set agents
 		if (prop.getProperty("agentclass") != null) {
 			thislaunch.hasexternalspawner = true;
-			File file = new File(prop.getProperty("agentloc"));
+
 			String classpath = prop.getProperty("agentclass");
 			String name;
-			if (prop.containsKey("agentname"))
+            Class<?> clazz;
+            if (prop.containsKey("agentname"))
 					name = prop.getProperty("agentname");
 			else
+					// if agent name not given, then just take the class name of the agent
 					name = classpath.toString();
-			
-			try {
-				URL[] fileurl = new URL[] { file.toURI().toURL() };
-				ClassLoader loader = new URLClassLoader(fileurl);
-				Class<?> clazz = Class.forName(classpath, true, loader);
-				Class<? extends PlanningAgent> runClass = clazz.asSubclass(PlanningAgent.class);
+            try {
+                // TODO: this is not working with mvn exec:java when agentloc is given
+                if (prop.containsKey("agentloc")) {
+                    File file = new File(prop.getProperty("agentloc"));
+                    URL[] fileurl = new URL[] { file.toURI().toURL() };
+                    ClassLoader loader = new URLClassLoader(fileurl);
+                    clazz = Class.forName(classpath, true, loader);
+                    thislaunch.jarfile = file;
+                } else {
+                    clazz = Class.forName(classpath);
+                }
+
+                Class<? extends PlanningAgent> runClass = clazz.asSubclass(PlanningAgent.class);
 				Constructor<? extends PlanningAgent> ctor = runClass.getConstructor();
 				PlanningAgent agent = ctor.newInstance();
+
 				thislaunch.agentName=name;
-				thislaunch.jarfile = file;
 				thislaunch.classpath=classpath;
 				thislaunch.planner = agent;		
 				Launcher.setExternalSpawner(agent);

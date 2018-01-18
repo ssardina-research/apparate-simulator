@@ -61,6 +61,14 @@
   	       </execution>
   	     </executions>
   	   </plugin>
+
+		<plugin>
+			<groupId>org.codehaus.mojo</groupId>
+			<artifactId>exec-maven-plugin</artifactId>
+			<configuration>
+				<mainClass>au.edu.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher</mainClass>
+			</configuration>
+		</plugin>
   	   
   	</plugins>
   </build>
