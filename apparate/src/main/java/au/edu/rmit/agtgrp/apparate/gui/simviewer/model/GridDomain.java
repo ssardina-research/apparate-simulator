@@ -1,7 +1,8 @@
 /**
  * A Library of Path Planning Algorithms
  *
- * Copyright (C) 2010 Abhijeet Anand and Sebastian Sardina, School of CS and IT, RMIT University, Melbourne VIC 3000.
+ * Copyright (C) 2010 Andy Xie, Abhijeet Anand and Sebastian Sardina
+ * School of CS and IT, RMIT University, Melbourne VIC 3000.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

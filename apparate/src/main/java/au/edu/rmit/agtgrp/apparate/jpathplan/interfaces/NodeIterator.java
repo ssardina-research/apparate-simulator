@@ -53,14 +53,16 @@ public interface NodeIterator {
      */
     /**
      * Return the next element in the sequence
-     * @return
+     *
+     * @return the next state in the sequence
      */
     public State next();
     
     
     /**
      * Is the sequence at the end?
-     * @return
+     *
+     * @return true if sequence is finished
      */
     public boolean eoi();
     /*

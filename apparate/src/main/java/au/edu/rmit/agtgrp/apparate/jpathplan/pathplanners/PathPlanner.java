@@ -80,7 +80,7 @@ public interface PathPlanner {
      * method is experimental and can be removed in future version if its
      * existence is redundant.
      * 
-     * @param heuristics
+     * @param heuristics    the heuristic to set
      * @return true if the given heuristics can be set and is applicable.
      */
     public boolean setHeuristics(Heuristics heuristics);

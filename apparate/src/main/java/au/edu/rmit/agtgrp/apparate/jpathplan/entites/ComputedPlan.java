@@ -40,7 +40,7 @@ public class ComputedPlan extends Plan {
     /**
      * Append steps/waypoints to this path.
      * 
-     * @param wayPoint
+     * @param wayPoint  the way-point state to append to a path
      * @return The index of this wayPoint if it was added successfully; <br>
      *         -1 otherwise.
      */
@@ -138,7 +138,7 @@ public class ComputedPlan extends Plan {
     /**
      * Add a step at the beginning of the path.
      * 
-     * @param wayPoint
+     * @param wayPoint the way-point state to append to a path at the start
      * @return 0 if successful (which is also the index of the step); <br>
      *         -1 otherwise.
      */
@@ -165,7 +165,7 @@ public class ComputedPlan extends Plan {
      * locks the path from any further modification. Hence, the cost should be set after the path
      * has been populated with waypoints.
      * 
-     * @param cost
+     * @param cost the cost to set
      * @return true, if successful; <br>
      *         false otherwise.
      */

@@ -121,7 +121,7 @@ public class SearchNode {
      * Sets the parent node for this node. The parent is set iff this assignment does not result in
      * cyclic linkage. More precisely, A.parent = (B == null)? B: !A.equals(B.parent)? B: A.parent;
      * 
-     * @param parent
+     * @param parent the parent to set
      */
     public void setParent(SearchNode/* T */parent) {
         m_parent = parent == null ? parent : !this.equals(parent.m_parent) ? parent : m_parent;
@@ -143,8 +143,8 @@ public class SearchNode {
     /**
      * Set the value of the annotation
      * 
-     * @param index
-     * @param value
+     * @param index the index to set
+     * @param value the value to set
      */
     public void set(int index, float value) {
         assert index >= 0;

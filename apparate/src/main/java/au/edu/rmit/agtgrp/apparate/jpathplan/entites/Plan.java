@@ -55,12 +55,16 @@ public abstract class Plan {
      * =======================================================================*
      */
     /**
+     * Get the length of the path
+     *
      * @return The length of the path in terms of number of steps.
      */
     public abstract int getLength();
     
     
     /**
+     * Get the current step in the plan
+     *
      * @return The the current step number in the plan
      */
     public abstract int getCurrentStepNo();
@@ -68,18 +72,17 @@ public abstract class Plan {
     /**
      * Set the current step.
      * 
-     * @param id
-     * @return step number to set.
+     * @param step step number to set.
      */
-    public abstract void setCurrentStep(int id);
+    public abstract void setCurrentStep(int step);
 
     /**
      * Return the Node corressponding to the specified step in the path.
      * 
-     * @param id
+     * @param step step number
      * @return Node for this step.
      */
-    public abstract State getStep(int id);
+    public abstract State getStep(int step);
     
     /**
      * Iterates over the path and returns the next step incementally.
@@ -96,7 +99,7 @@ public abstract class Plan {
     /**
      * Checks whether the node lies in the current path.
      * 
-     * @param wayPoint
+     * @param wayPoint the state way point to check
      * @return true if the node is in the path; <br>
      *         false otherwise.
      */
@@ -106,7 +109,7 @@ public abstract class Plan {
      * Returns the step number corresponding to the provided node, iff the node is in the current
      * path.
      * 
-     * @param waypoint
+     * @param waypoint the state way point to get the step id
      * @return The step id.
      */
     public abstract int getStepId(State waypoint);

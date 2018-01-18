@@ -1,7 +1,8 @@
 /**
  * A Library of Path Planning Algorithms
  *
- * Copyright (C) 2010 Abhijeet Anand and Sebastian Sardina, School of CS and IT, RMIT University, Melbourne VIC 3000.
+ * Copyright (C) 2010 Andy Xie, Abhijeet Anand and Sebastian Sardina
+ * School of CS and IT, RMIT University, Melbourne VIC 3000.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -50,8 +51,9 @@ public class MapData {
 	
 	/**
 	 * Creates a new empty map of the given dimension
-	 * @param width
-	 * @param height
+     *
+	 * @param width the width of the map
+	 * @param height the height of the map
 	 */
 	private MapData(int width, int height) {
 		this.width = width;
@@ -72,9 +74,10 @@ public class MapData {
 	}
 	
 	/**
-	 * reads the file and parse it into a mapdata object
+	 * Reads the file and parse it into a mapdata object
 	 * expect it to be in the specified format
-	 * @param path the path of the file
+     *
+	 * @param stream the stream to read from
 	 * @return the new data object
 	 */
 	public static MapData readExternalData(InputStream stream) {
@@ -152,7 +155,8 @@ public class MapData {
 	 *********************/
 	
 	/**
-	 * converts the character to the supposed cell type
+	 * Converts the character to the supposed cell type
+     *
 	 * @param chartype the character read from the file
 	 * @return the supposed cell type, returns default if the character is not recognised
 	 */
