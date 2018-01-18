@@ -1,7 +1,8 @@
 /*
  * APPARATE - Path Planner Framework and Simulator in Java
  *
- * Copyright (C) 2010-2018 Andy Xie, Abhijeet Anand and Sebastian Sardina
+ * Copyright (C) 2010-2018
+ * Andy Xie, Abhijeet Anand and Sebastian Sardina
  * School of CS and IT, RMIT University, Melbourne VIC 3000.
  *
  * This program is free software: you can redistribute it and/or modify

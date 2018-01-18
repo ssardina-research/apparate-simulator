@@ -1,3 +1,6 @@
+/*
+	This class has been provided by Geoff Sutcliffe and Rhys van der Waerden, 2012
+ */
 package au.edu.rmit.agtgrp.apparate.utils;
 
 import java.lang.management.ManagementFactory;

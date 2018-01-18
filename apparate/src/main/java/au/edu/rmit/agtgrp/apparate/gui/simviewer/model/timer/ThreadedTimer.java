@@ -1,7 +1,8 @@
-/**
- * A Path Planning Simulator
+/*
+ * APPARATE - Path Planner Framework and Simulator in Java
  *
- * Copyright (C) 2010 Andy Xie, Abhijeet Anand and Sebastian Sardina
+ * Copyright (C) 2010-2018
+ * Andy Xie, Abhijeet Anand and Sebastian Sardina
  * School of CS and IT, RMIT University, Melbourne VIC 3000.
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+
 package au.edu.rmit.agtgrp.apparate.gui.simviewer.model.timer;
 
 import java.util.List;
