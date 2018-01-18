@@ -8,7 +8,9 @@
 * Dynamic map scripts (if needed).
 
 
-## Compiling and Running APPARATE 
+## Compiling APPARATE 
+
+### Compile from CLI (command line)
 
 We show here how to compile the framework from CLI (Command Line Interface). 
 
@@ -28,6 +30,21 @@ javac -d bin/ -cp src/  \
 
 You can also use the script `./compile.sh` to compile into directory `bin/`.
 
+### Compile using Maven
+
+The [Maven Getting Started](https://maven.apache.org/guides/getting-started/index.html) can be helpful for those not familiar with Maven.
+
+When running maven, everything will be produced under `target/`:
+
+* You can compile using `mvn compile`; classes will be located in `target/classes`.
+* Then, you can produce the JAR file for the system using `mvn jar:jar`. 
+* A JAR files with sources can be produced via `mvn sources:jar`. 
+* Javadoc can be produced via `mvn javadoc:jar`. The Javadoc will be left under `target/apidoc`.
+* Everything can be produced under `target/` running `mvn package`.
+
+
+
+## Running the Simulator
 
 To **run** the system from CLI:
 
