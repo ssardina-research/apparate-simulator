@@ -5,7 +5,7 @@
 	<groupId>au.edu.rmit.agtgrp</groupId>
   <artifactId>apparate</artifactId>
   <packaging>jar</packaging>
-  <version>4.5.0-SNAPSHOT</version>
+  <version>4.5.0</version>
   <name>apparate</name>
   <url>http://maven.apache.org</url>
 
