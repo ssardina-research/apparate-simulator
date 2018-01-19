@@ -46,7 +46,9 @@ When running maven, everything will be produced under `target/`:
 
 ## Running the Simulator
 
-To **run** the system from CLI:
+There are three ways to run the simulator: via CLI, via script `run.sh`, or via Maven.
+
+To run the system **from CLI**:
 
 ```
 java -cp bin/: \
@@ -58,9 +60,19 @@ where:
 * `au.rmit.ai.agtgrp.apparate.gui.simviewer.controller.Launcher` is the main class that starts the application.
 * `<config-file>` contains all the options for the simulation. See [Configuration File](Configuration File) section for details on such file and an example.
 
-You can also use the script `./run.sh <conf-file>`
+You can also use the **running script** provided: 
 
+        ./run.sh <conf-file>
+
+Finally, you can run it **using Maven**: 
+
+        mvn exec:java -Dexec.args=config-extras.properties
+
+See this is like running 
+
+        mvn exec:java -Dexec.mainClass="au.edu.rmit.agtgrp.apparate.gui.simviewer.controller.Launcher" -Dexec.args=config-extras.properties`
 		
+
 ## GUI Interface Quick Start
 
 While self-explanatory in most cases here is what can be done via the GUI:
